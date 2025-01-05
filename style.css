@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "SFD";
+  src: url("sf_ui_display.otf");
+}
+:root {
+  --dark: #222;
+  --light: #eee;
+  --dark-alt: #333;
+  --light-alt: #ccc;
+}
+:root.dark-mode {
+  --dark: #eee;
+  --light: #222;
+  --dark-alt: #ccc;
+  --light-alt: #333;
+}
+@media (prefers-color-scheme: dark) {
+  :root body.dark-mode {
+    --dark: #eee;
+    --light: #222;
+    --dark-alt: #ccc;
+    --light-alt: #333;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+*:focus {
+  outline: none;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  color: var(--dark);
+  background: linear-gradient(135deg, var(--light) 60%, var(--light-alt));
+  font-size: 1.1rem;
+  font-family: "SFD", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+main {
+  padding-top: 1rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--dark-alt);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+input, button, p {
+  margin-bottom: 0.5rem;
+}
+
+input {
+  border: 1px solid var(--dark-alt);
+  padding: 0.7rem;
+  width: 100%;
+  background: rgb(216.75, 216.75, 216.75);
+  border-radius: 8px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+input::placeholder {
+  color: var(--dark-alt);
+}
+
+form {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in;
+}
+
+#loader {
+  background-color: var(--light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 9999;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+}
+#loader h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  animation: pulse 1s ease-in-out infinite;
+  color: var(--dark-alt);
+}
+
+#Ssuccess {
+  background-color: white;
+  border-left: 5px solid green;
+  padding: 1rem;
+  border-radius: 8px;
+}
+#Ssuccess p {
+  font-weight: bold;
+}
+
+#Serror {
+  background-color: white;
+  border-left: 5px solid red;
+  padding: 1rem;
+  border-radius: 8px;
+}
+#Serror p {
+  font-weight: bold;
+  color: red;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+footer p {
+  font-size: 0.9rem;
+  color: var(--dark-alt);
+}
+footer a {
+  color: var(--dark);
+  font-weight: bold;
+}
+footer a:hover {
+  color: rgb(8.5, 8.5, 8.5);
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
