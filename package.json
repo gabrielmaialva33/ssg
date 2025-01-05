@@ -8,7 +8,7 @@
     "format": "prettier --write ."
   },
   "author": "Maia <gabrielmaialva33>",
-  "license": "AGPL-3.0-or-later",
+  "license": "MIT",
   "eslintConfig": {
     "extends": "@adonisjs/eslint-config/app"
   },
