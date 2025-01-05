@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass src/style.sass dist/style.css --watch --no-source-map & webpack --watch",
+    "build": "sass src/style.sass dist/style.css --no-source-map && NODE_ENV=production webpack",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "author": "Maia <gabrielmaialva33>",
+  "license": "AGPL-3.0-or-later",
+  "eslintConfig": {
+    "extends": "@adonisjs/eslint-config/app"
+  },
+  "prettier": "@adonisjs/prettier-config",
+  "devDependencies": {
+    "@adonisjs/eslint-config": "2.0.0-beta.7",
+    "@adonisjs/prettier-config": "^1.4.0",
+    "@adonisjs/tsconfig": "^1.4.0",
+    "buffer": "^6.0.3",
+    "compression-webpack-plugin": "^11.1.0",
+    "node-polyfill-webpack-plugin": "^4.1.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "sass": "^1.83.1",
+    "telegram": "^2.26.16",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "util": "^0.12.5",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "zod": "^3.24.1"
+  },
+  "dependencies": {
+    "crypto-browserify": "^3.12.1",
+    "stream-browserify": "^3.0.0"
+  }
+}
