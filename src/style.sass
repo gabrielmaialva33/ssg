@@ -1,23 +1,31 @@
-$dark: var(--dark)
-$light: var(--light)
-$dark-alt: var(--dark-alt)
-$light-alt: var(--light-alt)
+$dark: #222
+$light: #eee
+$dark-alt: #333
+$light-alt: #ccc
 
 @font-face
   font-family: 'SFD'
   src: url('sf_ui_display.otf')
 
 :root
-  --dark: #222
-  --light: #eee
-  --dark-alt: #333
-  --light-alt: #ccc
+  --dark: #{$dark}
+  --light: #{$light}
+  --dark-alt: #{$dark-alt}
+  --light-alt: #{$light-alt}
 
-  @media (prefers-color-scheme:dark)
-  --dark: #eee
-  --light: #222
-  --dark-alt: #ccc
-  --light-alt: #333
+  &.dark-mode
+    --dark: #eee
+    --light: #222
+    --dark-alt: #ccc
+    --light-alt: #333
+
+  @media (prefers-color-scheme: dark)
+    body
+      &.dark-mode
+        --dark: #eee
+        --light: #222
+        --dark-alt: #ccc
+        --light-alt: #333
 
 *
   box-sizing: border-box
@@ -36,53 +44,129 @@ html, body
 body
   padding: 2rem
   max-width: 500px
-  margin-right: auto
-  margin-left: auto
-  color: $dark
-  background: $light
+  margin: auto
+  color: var(--dark)
+  background: linear-gradient(135deg, var(--light) 60%, var(--light-alt))
   font-size: 1.1rem
-  font-family: 'SFD', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-family: 'SFD', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+  border-radius: 12px
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1)
+
+header
+  text-align: center
+  margin-bottom: 2.5rem
+
+  h1
+    font-size: 2rem
+    font-weight: 600
+    margin-bottom: 0.5rem
+
+main
+  padding-top: 1rem
+
+section
+  margin-bottom: 1.5rem
 
 button
   cursor: pointer
-  transition-duration: 0.25s
+  transition: all 0.3s ease-in-out
+  background-color: var(--dark-alt)
+  color: white
+  font-weight: 600
+  border-radius: 8px
+  padding: 0.8rem
 
   &:hover
-    opacity: 0.5
+    opacity: 0.8
+    transform: scale(1.05)
 
 input, button, p
   margin-bottom: 0.5rem
 
-input, button
-  border: none
+input
+  border: 1px solid var(--dark-alt)
   padding: 0.7rem
   width: 100%
-  background: $light-alt
+  background: lighten($light-alt, 5%)
+  border-radius: 8px
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05)
 
   &::placeholder
-    color: $dark-alt
+    color: var(--dark-alt)
+
+form
+  background: rgba(255, 255, 255, 0.8)
+  padding: 1.5rem
+  border-radius: 12px
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  animation: fadeIn 0.5s ease-in
 
 #loader
-  background-color: $light
+  background-color: var(--light)
   position: fixed
   top: 0
   left: 0
   text-align: center
   height: 100vh
   width: 100%
-  transition-duration: 500ms
-  transition-property: opacity
   z-index: 9999
   opacity: 0
-  padding: 2rem
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: opacity 0.5s ease-in-out
 
   h1
     font-size: 2.5rem
+    font-weight: bold
     animation: pulse 1s ease-in-out infinite
+    color: var(--dark-alt)
+
+#Ssuccess
+  background-color: lighten($light, 20%)
+  border-left: 5px solid green
+  padding: 1rem
+  border-radius: 8px
+
+  p
+    font-weight: bold
+
+#Serror
+  background-color: lighten($light, 20%)
+  border-left: 5px solid red
+  padding: 1rem
+  border-radius: 8px
+
+  p
+    font-weight: bold
+    color: red
+
+footer
+  text-align: center
+  margin-top: 3rem
+
+  p
+    font-size: 0.9rem
+    color: var(--dark-alt)
+
+  a
+    color: var(--dark)
+    font-weight: bold
+
+    &:hover
+      color: darken($dark, 10%)
 
 @keyframes pulse
   50%
-    opacity: 0.25
+    opacity: 0.5
 
   100%
     opacity: 1
+
+@keyframes fadeIn
+  from
+    opacity: 0
+    transform: translateY(10px)
+  to
+    opacity: 1
+    transform: translateY(0)

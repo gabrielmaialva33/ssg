@@ -4,56 +4,61 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SSG</title>
+  <title>SSG - String Session Generator</title>
   <meta name="description" content="Generate GramJS string sessions with your browser." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<section id="loader" style="display: none">
-  <h1>SSG</h1>
-</section>
+<header>
+  <h1>Generate Your String Session</h1>
+</header>
 
-<section id="Smain">
-  <form id="Fmain">
-    <input name="appId" type="text" placeholder="App ID" autocomplete="off" />
-    <input name="appHash" type="password" placeholder="App hash" autocomplete="off" />
-    <input name="number" type="text" placeholder="Phone number" autocomplete="off" />
-    <button type="submit">Next</button>
-  </form>
-</section>
+<main>
+  <section id="loader" style="display: none">
+    <h1>Loading...</h1>
+  </section>
 
-<section id="Scode" style="display: none">
-  <form id="Fcode">
-    <input name="code" type="text" placeholder="Code" autocomplete="off" />
-    <button type="submit">Next</button>
-  </form>
-</section>
+  <section id="Smain">
+    <form id="Fmain" class="form-section">
+      <input name="appId" type="text" placeholder="App ID" autocomplete="off" />
+      <input name="appHash" type="password" placeholder="App hash" autocomplete="off" />
+      <input name="number" type="text" placeholder="Phone number" autocomplete="off" />
+      <button type="submit" class="btn-primary">Next</button>
+    </form>
+  </section>
 
-<section id="Spassword" style="display: none">
-  <form id="Fpassword">
-    <input
-      name="password"
-      type="password"
-      placeholder="Password"
-      id="Ipassword"
-      autocomplete="off"
-    />
-    <button type="submit">Next</button>
-  </form>
-</section>
+  <section id="Scode" style="display: none">
+    <form id="Fcode" class="form-section">
+      <input name="code" type="text" placeholder="Enter Code" autocomplete="off" />
+      <button type="submit" class="btn-primary">Next</button>
+    </form>
+  </section>
 
-<section id="Ssuccess" style="display: none">
-  <p><b>The generated string session</b> was sent to <b>your saved messages</b>.</p>
-  <p>
-    Did you like this?
-    <a href="https://github.com/gabrielmaialva33/ssg">Give it a star!</a>
-  </p>
-</section>
+  <section id="Spassword" style="display: none">
+    <form id="Fpassword" class="form-section">
+      <input id="Ipassword" name="password" type="password" placeholder="Enter Password" autocomplete="off" />
+      <button type="submit" class="btn-primary">Next</button>
+    </form>
+  </section>
 
-<section id="Serror" style="display: none">
-  <p id="Perror"></p>
-  <button id="Bdismiss">Dismiss</button>
-</section>
+  <section id="Ssuccess" style="display: none" class="success-section">
+    <p><b>Your string session</b> has been sent to <b>your saved messages</b>.</p>
+    <p>
+      Did you like this?
+      <a href="https://github.com/gabrielmaialva33/ssg">Give it a star!</a>
+    </p>
+  </section>
+
+  <section id="Serror" style="display: none" class="error-section">
+    <p id="Perror">Something went wrong! Please try again.</p>
+    <button id="Bdismiss" class="btn-primary">Dismiss</button>
+  </section>
+</main>
+
+<footer>
+  <p>Made with ❤️ by <a href="https://github.com/gabrielmaialva33/ssg">Gabriel Maia</a></p>
+</footer>
 
 <script src="main.js"></script>
 </body>
