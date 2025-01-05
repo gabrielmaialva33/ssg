@@ -24,8 +24,8 @@
 
 ## **📖 About the Project**
 
-The **SSG (String Session Generator)** is a simple and secure application for generating **string sessions** for *
-*Telethon/GramJS** directly in the browser, avoiding the risk of sharing sensitive data.
+The **SSG (String Session Generator)** is a simple and secure application for generating **string sessions** for
+**Telethon/GramJS** directly in the browser, avoiding the risk of sharing sensitive data.
 
 ---
 
